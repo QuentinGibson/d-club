@@ -1,0 +1,18 @@
+.Dropdown-control {
+  background: transparent;
+  border-color: transparent;
+  color: white;
+  display: flex;
+  gap: 10px;
+}
+
+.Dropdown-arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Dropdown-arrow {
+  position: static;
+  border-color: #fff transparent transparent;
+}
