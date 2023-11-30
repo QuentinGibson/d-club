@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Events } from "~/components/Events";
 import { Carousel } from "~/components/Carousel/";
 import { Navbar } from "~/components/Navbar";
 
@@ -20,6 +21,12 @@ export default function Index() {
     <main className="bg-black min-h-screen">
       <Navbar />
       <Carousel gallery={gallery} />
+      <div className="my-16 bg-black flex flex-col gap-10">
+        <div className="flex justify-center">
+          <h2 className="text-white text-8xl">Featured Artists</h2>
+        </div>
+        <Events />
+      </div>
     </main>
   );
 }

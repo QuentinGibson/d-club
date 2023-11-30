@@ -9,7 +9,12 @@ type MenuOverlayProps = {
 const OverlayItem = ({ menuItem }: { menuItem: MenuItem }) => {
   return (
     <li className="py-3">
-      <Link className="text-white text-4xl md:text-5xl" to={menuItem.link}>{menuItem.name}</Link>
+      <Link
+        className="text-white text-4xl md:text-5xl"
+        to={menuItem.link}
+      >
+        {menuItem.name}
+      </Link>
     </li>
   )
 }
