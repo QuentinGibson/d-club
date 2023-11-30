@@ -1,15 +1,15 @@
-import { useEffect, useRef } from 'react';
-import useEmblaCarousel from 'embla-carousel-react'
-import gsap from 'gsap';
 import Autoplay from 'embla-carousel-autoplay'
+import useEmblaCarousel from 'embla-carousel-react'
+import animationGsap from 'gsap';
+import { useEffect, useRef } from 'react';
 
-type CarouselProps = {
+interface CarouselProps {
   gallery: string[];
   autoplayInterval?: number;
-};
+}
 
 export const Carousel = ({ gallery, autoplayInterval = 4000 }: CarouselProps) => {
-  const autoplayOptions = { delay: autoplayInterval, rootNode: (emblaRoot: any) => emblaRoot.parentElement }
+  const autoplayOptions = { delay: autoplayInterval, rootNode: (emblaRoot: HTMLElement) => emblaRoot.parentElement }
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay(autoplayOptions)])
   const imgRefs = useRef<(HTMLImageElement | null)[]>(Array(gallery.length).fill(null));
 
@@ -22,7 +22,7 @@ export const Carousel = ({ gallery, autoplayInterval = 4000 }: CarouselProps) =>
       const activeImg = imgRefs.current[currentIndex]
 
 
-      gsap.fromTo(
+      animationGsap.fromTo(
         activeImg,
         { scale: 1.2, opacity: 0.3 }, // Initial state (zoomed in and slightly faded)
         {

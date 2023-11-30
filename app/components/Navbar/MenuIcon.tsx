@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useState } from "react";
-type MenuIconProps = {
+interface MenuIconProps {
   onClick: () => void;
 }
 

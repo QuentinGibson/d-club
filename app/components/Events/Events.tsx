@@ -1,10 +1,10 @@
 
-import { useEffect, useRef } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import gsap from 'gsap';
 import Autoplay from 'embla-carousel-autoplay';
+import useEmblaCarousel from 'embla-carousel-react';
+import animationGsap from 'gsap';
+import { useEffect, useRef } from 'react';
 
-type Event = {
+interface Event {
   name: string,
   image: string,
   date: Date
@@ -57,7 +57,7 @@ const eventDetails: Event[] = [
 ]
 
 export const Events = () => {
-  const autoplayOptions = { delay: 6000, rootNode: (emblaRoot: any) => emblaRoot.parentElement }
+  const autoplayOptions = { delay: 6000, rootNode: (emblaRoot: HTMLElement) => emblaRoot.parentElement }
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay(autoplayOptions)])
   const imgRefs = useRef<(HTMLImageElement | null)[]>(Array(eventDetails.length).fill(null));
   const nameOverlayRefs = useRef<(HTMLDivElement | null)[]>(Array(eventDetails.length).fill(null));
@@ -70,7 +70,7 @@ export const Events = () => {
       const activeImg = imgRefs.current[currentIndex]
 
 
-      gsap.fromTo(
+      animationGsap.fromTo(
         activeImg,
         { scale: 1.0, opacity: 0.3 }, // Initial state (zoomed in and slightly faded)
         {
@@ -91,12 +91,12 @@ export const Events = () => {
 
   const handleSlideMouseEnter = (index: number) => {
     const nameOverlay = nameOverlayRefs.current[index];
-    gsap.to(nameOverlay, { opacity: 1, duration: 0.5, ease: 'power3.out' });
+    animationGsap.to(nameOverlay, { opacity: 1, duration: 0.5, ease: 'power3.out' });
   };
 
   const handleSlideMouseLeave = (index: number) => {
     const nameOverlay = nameOverlayRefs.current[index];
-    gsap.to(nameOverlay, { opacity: 0, duration: 0.5, ease: 'power3.out' });
+    animationGsap.to(nameOverlay, { opacity: 0, duration: 0.5, ease: 'power3.out' });
   };
 
 

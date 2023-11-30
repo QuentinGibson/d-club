@@ -1,10 +1,10 @@
 
-type MenuItem = {
+interface MenuItem {
   link: string,
   name: string
 }
 
-type BuyMenuItem = {
+interface BuyMenuItem {
   link: string,
   name: string,
   header: string,

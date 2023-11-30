@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react"
-type ItemProps = {
+interface ItemProps {
   name: string,
   link: string
 }

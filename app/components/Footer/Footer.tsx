@@ -1,5 +1,6 @@
-import { Logo } from "../Navbar/Logo"
 import { BsTwitterX, BsFacebook, BsInstagram } from 'react-icons/bs'
+
+import { Logo } from "../Navbar/Logo"
 
 export const Footer = () => {
   return (

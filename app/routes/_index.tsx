@@ -1,15 +1,13 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Events } from "~/components/Events";
-import { Carousel } from "~/components/Carousel/";
-import { Navbar } from "~/components/Navbar";
 
-import { useOptionalUser } from "~/utils";
+import { Carousel } from "~/components/Carousel/";
+import { Events } from "~/components/Events";
 import { Footer } from "~/components/Footer";
+import { Navbar } from "~/components/Navbar";
 
 export const meta: MetaFunction = () => [{ title: "D-Club" }];
 
 export default function Index() {
-  const user = useOptionalUser();
   const gallery: string[] = [
     "/club-slideshow1.jpg",
     "/club-slideshow2.jpg",
