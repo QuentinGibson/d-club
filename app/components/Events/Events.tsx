@@ -106,7 +106,7 @@ export const Events = () => {
       <div className="embla__container flex">
         {eventDetails.map((event, index) => {
           return (
-            <div key={index} className="embla__slide grow-0 shrink-0 w-1/4 mr-28 relative"
+            <div key={index} className="embla__slide grow-0 shrink-0 w-1/2 md:w-1/4 mr-10 md:mr-28 relative"
               onMouseEnter={() => handleSlideMouseEnter(index)}
               onMouseLeave={() => handleSlideMouseLeave(index)}
             >

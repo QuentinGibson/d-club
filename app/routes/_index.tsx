@@ -4,6 +4,7 @@ import { Carousel } from "~/components/Carousel/";
 import { Navbar } from "~/components/Navbar";
 
 import { useOptionalUser } from "~/utils";
+import { Footer } from "~/components/Footer";
 
 export const meta: MetaFunction = () => [{ title: "D-Club" }];
 
@@ -20,13 +21,16 @@ export default function Index() {
   return (
     <main className="bg-black min-h-screen">
       <Navbar />
-      <Carousel gallery={gallery} />
-      <div className="my-16 bg-black flex flex-col gap-10">
+      <div className="h-screen">
+        <Carousel gallery={gallery} />
+      </div>
+      <div className="mt-16 bg-black flex flex-col gap-10 h-[500px] md:h-[600px]">
         <div className="flex justify-center">
-          <h2 className="text-white text-8xl">Featured Artists</h2>
+          <h2 className="text-white text-4xl md:text-5xl">Featured Events</h2>
         </div>
         <Events />
       </div>
+      <Footer />
     </main>
   );
 }

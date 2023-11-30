@@ -42,14 +42,14 @@ export const Carousel = ({ gallery, autoplayInterval = 4000 }: CarouselProps) =>
   }, [emblaApi]);
 
   return (
-    <div className="embla overflow-hidden" ref={emblaRef}>
-      <div className="embla__container flex">
+    <div className="embla overflow-hidden h-full w-full" ref={emblaRef}>
+      <div className="embla__container flex h-full w-full">
         {gallery.map((imageSrc, index) => {
           return (
             <div key={index} className="embla__slide grow-0 shrink-0 w-full">
               <img
                 ref={(el) => (imgRefs.current[index] = el)}
-                className="object-cover h-full" src={imageSrc} alt="" />
+                className="object-cover h-full w-full" src={imageSrc} alt="" />
             </div>
           )
         })}
