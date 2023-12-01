@@ -1,7 +1,8 @@
-import { LoaderFunctionArgs } from "@remix-run/node";
+import { LoaderFunctionArgs, redirect } from "@remix-run/node";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   console.log(params)
+  redirect("/")
 };
 
 export default function Auth() {
